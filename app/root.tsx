@@ -1,5 +1,7 @@
 import {
   Form,
+  Link,
+  Outlet,
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
@@ -7,6 +9,8 @@ import {
 import type { Route } from "./+types/root";
 
 import appStylesHref from "./app.css?url";
+
+// めも: root.tsx は、「/」に対応するコンポーネントです。
 
 export default function App() {
   return (
@@ -31,13 +35,16 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <a href={`/contacts/1`}>Your Name</a>
+              <Link to={`/contacts/1`}>Your Name</Link>
             </li>
             <li>
-              <a href={`/contacts/2`}>Your Friend</a>
+              <Link to={`/contacts/2`}>Your Friend</Link>
             </li>
           </ul>
         </nav>
+      </div>
+      <div id="detail">
+        <Outlet />
       </div>
     </>
   );

@@ -1,6 +1,4 @@
 import {
-  Form,
-  Link,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -9,7 +7,12 @@ import {
 import type { Route } from "./+types/root";
 
 import appStylesHref from "./app.css?url";
-import { getContacts } from "./data";
+import { createEmptyContact } from "./data";
+
+export async function action() {
+  const contact = await createEmptyContact();
+  return { contact };
+}
 
 // MEMO: root.tsx は、「/」に対応するコンポーネント → RootRoute
 export default function App({ loaderData }: Route.ComponentProps) {

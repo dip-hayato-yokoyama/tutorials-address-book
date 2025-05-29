@@ -28,6 +28,7 @@ export default function SidebarLayout({ loaderData }: Route.ComponentProps) {
             />
             <div aria-hidden hidden={true} id="search-spinner" />
           </Form>
+          {/* MEMO: Action関数が実行される。されたあと、データを再取得する。 */}
           <Form method="post">
             <button type="submit">New</button>
           </Form>
